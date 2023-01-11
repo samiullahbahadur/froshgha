@@ -1,0 +1,14 @@
+
+
+
+<%@customer.each do |customer|%>
+    
+    <h1> Customer Name:   <%=  customer.full_name%></h1>
+    <p>    <%=  customer.address%></p>
+    <p>    <%=  customer.phone%></p>
+    <%= button_to 'Remove', customer_path(customer), method: :delete %>
+
+<%end%>
+
+
+

@@ -1,0 +1,23 @@
+<p class="offconvase"> Add New Customer</p>
+
+<%= form_with model: @customer, url: customer_index_path   do |e| %>
+   
+
+    <div class="mb-3">
+        <%= e.text_field :full_name, autofocus: true,   placeholder:"Full Name" %>
+    </div> 
+    <div class="mb-3">
+        <%= e.text_field :address, autofocus: true,   placeholder:"Address" %>
+    </div>
+    <div class="mb-3">
+        <%= e.text_field :phone, autofocus: true,  placeholder:"Phone" %>
+    </div>
+   
+    <div class="mb-3">
+    <%= e.submit "Save" %>
+    </div>
+
+   
+   
+
+<% end %>
