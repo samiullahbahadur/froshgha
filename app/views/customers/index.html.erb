@@ -1,6 +1,5 @@
 
 
-
 <%@customer.each do |customer|%>
     
     <h1> Customer Name:   <%=  customer.full_name%></h1>
@@ -9,6 +8,4 @@
     <%= button_to 'Remove', customer_path(customer), method: :delete %>
 
 <%end%>
-
-
 

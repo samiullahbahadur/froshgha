@@ -1,7 +1,8 @@
-class CustomerController < ApplicationController
+class CustomersController < ApplicationController
   def index
     @customer= Customer.all
   end
+
   def new
     @customer = Customer.new
   end
@@ -10,7 +11,7 @@ class CustomerController < ApplicationController
 
     @customer= Customer.new(customer_params)
      if @customer.save
-      redirect_to customer_index_path
+      redirect_to customers_path
      else
       render 'new'
      end
@@ -20,7 +21,7 @@ class CustomerController < ApplicationController
     def destroy
       @customer = Customer.find(params[:id])
       @customer.destroy
-      redirect_to customer_index_path
+      redirect_to customers_path
   end
 
   private 
