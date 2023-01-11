@@ -1,0 +1,17 @@
+
+
+<%= form_with model: @category   do |c| %>
+   
+    <div class="mb-3">
+        <%= c.text_field :category_name, autofocus: true,   placeholder:"Category name" %>
+    </div> 
+   
+   
+    <div class="mb-3">
+    <%= c.submit  %>
+    </div>
+
+    <%= link_to "Back" , categories_path %>
+   
+
+<% end %>
