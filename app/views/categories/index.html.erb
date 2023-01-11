@@ -1,0 +1,10 @@
+
+
+<%@category.each do |category|%>
+    
+    <h1> Categories Name:   <%=  category.category_name%></h1>
+    
+    <%= button_to 'Remove', category_path(category), method: :delete %>
+
+<%end%>
+
