@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  customer: one
+  invoice: one
+  amount_paid: 
+  date: 2023-01-10
+
+two:
+  customer: two
+  invoice: two
+  amount_paid: 
+  date: 2023-01-10
