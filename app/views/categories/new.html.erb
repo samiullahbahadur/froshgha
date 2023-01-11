@@ -1,0 +1,17 @@
+<p class="offconvase"> Add New Categories</p>
+
+<%= form_with model: @category, url: categories_path   do |cat| %>
+   
+    <div class="mb-3">
+        <%= cat.text_field :category_name, autofocus: true,   placeholder:"Category name" %>
+    </div> 
+   
+   
+    <div class="mb-3">
+    <%= cat.submit "Save" %>
+    </div>
+
+   
+   
+
+<% end %>
