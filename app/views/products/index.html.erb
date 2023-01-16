@@ -1,10 +1,8 @@
 
   
 <%@product.each do |product|%>
-  <% @category=  Category.find( product.category_id) %>
-  
-
-    <h1> Category Name: <%= @category.category_name %></h1>
+ 
+    <h1> Category Name: <%= product.category.category_name %></h1>
 
     <p> Products Details:   <%= product.product_details %></p>
     
