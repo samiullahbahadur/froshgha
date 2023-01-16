@@ -1,5 +1,11 @@
 class ProductsController < ApplicationController
+
   def index
-    @product=Product.all 
+    @category = Category.all 
+    @product=Product.joins(:category)
+     
+   
+  
   end
+
 end

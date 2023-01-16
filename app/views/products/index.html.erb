@@ -1,10 +1,15 @@
 
-
+  
 <%@product.each do |product|%>
+  <% @category=  Category.find( product.category_id) %>
+  
+
+    <h1> Category Name: <%= @category.category_name %></h1>
+
+    <p> Products Details:   <%= product.product_details %></p>
     
-    <h1> Categories Name:   <%=  category.category_name%></h1>
-    <%= link_to 'Edit', edit_category_path(category) %>
-    <%= button_to 'Remove', category_path(category), method: :delete %>
+    <%= link_to 'Edit', edit_product_path(product) %>
+    <%= button_to 'Remove', product_path(product), method: :delete %>
 
 <%end%>
 
