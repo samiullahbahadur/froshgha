@@ -1,2 +1,3 @@
 class Bejak < ApplicationRecord
+    
 end
