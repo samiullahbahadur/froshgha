@@ -3,7 +3,7 @@ class CustomersController < ApplicationController
   before_action :set_customer, only: [:edit, :update, :destroy]
 
   def index
-    @customer= Customer.all
+    @customer= Customer.all.limit(2)
   end
 
   def edit 
