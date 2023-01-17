@@ -1,0 +1,20 @@
+
+<h1>All Invoice Details</h1>
+
+<button>  <%= link_to 'New', new_invoice_detail_path  %></button>
+<%@invoice_details.each do |invoice|%>
+    
+    <p> Product Details:   <%= invoice.product.product_details %></p>
+    <p> Unit:   <%= invoice.unit%></p>
+    <p> Quantity:   <%= invoice.quantity %></p>
+    <p> Unit Price:   <%= invoice.unit_price %></p>
+    <p> Discount:   <%= invoice.discount %></p>
+    <p> Total Price:   <%=  (invoice.unit_price- invoice.discount) * invoice.quantity  %></p>
+    
+
+    <%= link_to 'Edit', edit_invoice_detail_path(invoice) %>
+    <%= button_to 'Remove', invoice_detail_path(invoice), method: :delete %>
+
+<%end%>
+
+

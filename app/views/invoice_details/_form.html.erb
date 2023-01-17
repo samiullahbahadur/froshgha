@@ -1,0 +1,32 @@
+
+
+
+<%= form_with model: @invoice_details,  url: invoice_details_path  do |ind| %>
+   
+
+    <div class="mb-3">
+    <%= ind.select  :product_id,  Product.pluck(:product_details, :id)  %>
+    </div> 
+     
+    <div class="mb-3">
+        <%= ind.text_field :unit, autofocus: true,   placeholder:"Unit" %>
+    </div> 
+    <div class="mb-3">
+        <%= ind.number_field :quantity, autofocus: true,   placeholder:"Quantity" %>
+    </div> 
+    <div class="mb-3">
+        <%= ind.number_field :unit_price, autofocus: true, step: :any,  placeholder:"Unit Price" %>
+    </div> 
+    <div class="mb-3">
+        <%= ind.number_field :discount, autofocus: true, step: :any,  placeholder:"Discount" %>
+    </div> 
+    
+   
+    <div class="mb-3">
+    <%= ind.submit  %>
+    </div>
+
+   <%= link_to "Back", invoice_details_path %>
+   
+
+<% end %>

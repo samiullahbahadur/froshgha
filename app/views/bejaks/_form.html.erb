@@ -1,0 +1,20 @@
+
+
+<%= form_with model: @bejak    do |bejak| %>
+   
+    <div class="mb-3">
+        <%= bejak.text_area :details, autofocus: true,cols: 50, rows: 3,   placeholder:"Bejak details" %>
+    </div> 
+    <div class="mb-3">
+        <%= bejak.date_field :date, autofocus: true%>
+    </div> 
+   
+   
+    <div class="mb-3">
+    <%= bejak.submit  %>
+    </div>
+
+    <%= link_to "Back" , bejaks_path %>
+   
+
+<% end %>

@@ -1,0 +1,21 @@
+
+
+<%= form_with model: @current_price    do |c_price| %>
+   
+    <div class="mb-3">
+        <%= c_price.select  :product_id,  Product.pluck(:product_details, :id)  %>
+
+    </div> 
+    <div class="mb-3">
+        <%= c_price.number_field  :price,  autofocus:true, step: :any,  placeholder:"Enter price"  %>
+
+    </div> 
+   
+    <div class="mb-3">
+    <%= c_price.submit  %>
+    </div>
+
+    <%= link_to "Back" , current_prices_path %>
+   
+
+<% end %>

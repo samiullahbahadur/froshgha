@@ -1,0 +1,34 @@
+
+
+
+<%= form_with model: @bejak_detail   do |bjd| %>
+
+    <div class="mb-3">
+    <%= bjd.select :product_id, Product.pluck(:product_details, :id) %>
+  </div> 
+ 
+   
+    <div class="mb-3">
+        <%= bjd.text_area :details, autofocus: true,  cols: 30, rows: 2, placeholder:"Bejak Details" %>
+    </div> 
+    <div class="mb-3">
+        <%= bjd.text_field :unit, autofocus: true,   placeholder:"Unit" %>
+    </div> 
+    <div class="mb-3">
+        <%= bjd.number_field :quantity, autofocus: true,   placeholder:"Quantity" %>
+    </div> 
+    <div class="mb-3">
+        <%= bjd.number_field :unit_price, autofocus: true, step: :any,  placeholder:"Unit Price" %>
+    </div> 
+    
+  
+   
+   
+    <div class="mb-3">
+    <%= bjd.submit  %>
+    </div>
+
+    <%= link_to "Back", bejak_details_path %>
+   
+
+<% end %>
