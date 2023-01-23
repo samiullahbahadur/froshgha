@@ -1,0 +1,15 @@
+
+<h1>All Invoices</h1>
+
+<button>  <%= link_to 'New',new_invoice_path  %></button>
+<%@invoice.each do |invoice|%>
+    
+    <p> Customer Name:   <%= invoice.customer.full_name %></p>
+    <p>Issue date:   <%= invoice.date %></p>
+
+    <%= link_to 'Edit', edit_invoice_path(invoice) %>
+    <%= button_to 'Remove', invoice_path(invoice), method: :delete %>
+
+<%end%>
+
+

@@ -1,0 +1,14 @@
+<h1>All Current Price</h1>
+
+   <button>  <%= link_to 'New',new_current_price_path  %></button>
+<%@current_price.each do |price|%>
+
+    <p> Product:  <%= price.product.product_details %></p>
+    <p> Price:   <%= price.price %></p>
+   
+    <%= link_to 'Edit', edit_current_price_path(price) %>
+    <%= button_to 'Remove', current_price_path(price), method: :delete %>
+
+<%end%>
+
+

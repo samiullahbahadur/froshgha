@@ -1,0 +1,11 @@
+
+  
+<%@user.each do |user|%>
+ 
+  <h1> Category Name: <%= user.fullname %></h1>
+  
+  <%= link_to 'Edit', edit_user_path(user) %>
+  <%= button_to 'Remove', user_path(user), method: :delete %>
+
+<%end%>
+

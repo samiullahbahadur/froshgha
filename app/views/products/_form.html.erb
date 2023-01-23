@@ -1,0 +1,24 @@
+
+
+
+
+<%= form_with model: @product   do |p| %>
+
+   
+    <div>
+    <%= p.select  :category_id, Category.pluck( :category_name, :id) %>
+    </div>
+
+    <div class="mb-3">
+        <%= p.text_area :product_details, autofocus: true, cols: 50, rows: 3,  placeholder:"Product details" %>
+    </div> 
+   
+   
+    <div class="mb-3">
+    <%= p.submit  %>
+    </div>
+
+    <%= link_to "Back" , products_path %>
+   
+
+<% end %>

@@ -1,0 +1,2 @@
+module BejakDetailsHelper
+end
