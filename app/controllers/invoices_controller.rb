@@ -1,4 +1,6 @@
 class InvoicesController < ApplicationController
+  before_action :require_user_logged_in 
+  
   before_action :set_invoice, only: [:edit, :update, :destroy]
   def index
     @invoice=Invoice.all

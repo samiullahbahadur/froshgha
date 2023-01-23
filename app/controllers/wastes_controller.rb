@@ -1,5 +1,7 @@
 class WastesController < ApplicationController
 
+  before_action :require_user_logged_in 
+
   def index
     @waste= Waste.all
   end
