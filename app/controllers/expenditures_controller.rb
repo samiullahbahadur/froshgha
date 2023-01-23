@@ -1,4 +1,5 @@
 class ExpendituresController < ApplicationController
+  before_action :require_user_logged_in 
 
   before_action  :set_exp, only:[:edit, :update, :destroy]
 
