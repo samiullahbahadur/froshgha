@@ -1,14 +1,10 @@
 Rails.application.routes.draw do
-  get 'expenditures/index'
-  get 'current_prices/index'
-
-
- 
- 
-
   root 'customers#index'
+  get 'signup'=> 'users#new'
+  resources :users, except: [:new] 
 
-   resources  :customers
+
+   resources :customers
    resources :categories
    resources  :products
    resources  :bejaks 
@@ -18,4 +14,9 @@ Rails.application.routes.draw do
    resources  :wastes
    resources  :current_prices
    resources  :expenditures
+
+   get 'sign_in', to: "sessions#new"
+ post 'sign_in', to: "sessions#create"
+ delete 'logout' => 'sessions#destroy'
+ 
 end

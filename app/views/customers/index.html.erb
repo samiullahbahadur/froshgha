@@ -1,12 +1,15 @@
 
-
+  <button>
+     <%= link_to 'New',new_customer_path  %>
+     </button>
 <%@customer.each do |customer|%>
     
-    <h1> Customer Name:   <%=  customer.full_name%></h1>
+    <h1 > Customer Name:   <%=  customer.full_name%></h1>
     <p>    <%=  customer.address%></p>
     <p>    <%=  customer.phone%></p>
     <%= link_to 'Edit', edit_customer_path(customer) %>
-    <%= button_to 'Remove', customer_path(customer), method: :delete %>
+ 
+    <%= button_to 'Remove', customer_path(customer), method: :delete,  class:"btn btn-primary" %>
 
 <%end%>
 

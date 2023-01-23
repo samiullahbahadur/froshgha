@@ -1,0 +1,47 @@
+<div class="nav">
+<div class="left-nav" >logo
+</div>
+<div >
+<ul class="link_group1">
+<% if @current_user %>
+ <li>
+   <%= link_to "مشتریان", customers_path  %>
+ </li>
+ <li>
+   <%= link_to "کتگوری",categories_path  %>
+ </li>
+ <li>
+   <%= link_to "خریداری",bejak_details_path  %>
+ </li>
+ <li>
+   <%= link_to "فروشات", invoice_details_path  %>
+ </li>
+ <li>
+   <%= link_to "نرخ", current_prices_path  %>
+ </li>
+   <% end %>
+</ul>
+</div>
+
+<div class='right-nav'>
+<ul class="link_group" >
+<% if @current_user %>
+  <li >
+   <%= @current_user.fullname %> 
+  </li> 
+  <li>
+  <%=  button_to "Sign out" , logout_path, method: :delete  %>
+  </li>
+  <% else %>
+  <li> 
+    <%= link_to "Sign in", sign_in_path %>
+  </li>
+  <li>
+  <%= link_to "Sign up",signup_path %>
+</li>
+
+  <%end%>
+</ul>
+</div>
+
+</div>

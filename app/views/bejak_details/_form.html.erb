@@ -1,7 +1,7 @@
 
 
 
-<%= form_with model: @bejak_detail   do |bjd| %>
+<%= form_with model: @bejak_detail, url:  bejak_details_path   do |bjd| %>
 
     <div class="mb-3">
     <%= bjd.select :product_id, Product.pluck(:product_details, :id) %>

@@ -9,7 +9,7 @@
     <p> Quantity:   <%= invoice.quantity %></p>
     <p> Unit Price:   <%= invoice.unit_price %></p>
     <p> Discount:   <%= invoice.discount %></p>
-    <p> Total Price:   <%=  (invoice.unit_price- invoice.discount) * invoice.quantity  %></p>
+    <p> Total Price:   <%=  (invoice.unit_price - invoice.discount) * invoice.quantity  %></p>
     
 
     <%= link_to 'Edit', edit_invoice_detail_path(invoice) %>
