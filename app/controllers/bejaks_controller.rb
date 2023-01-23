@@ -1,6 +1,6 @@
 class BejaksController < ApplicationController
 
-  
+  before_action :require_user_logged_in 
   before_action :set_bejak, only: [:edit, :update]
 
   def index

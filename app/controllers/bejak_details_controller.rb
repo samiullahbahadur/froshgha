@@ -1,22 +1,21 @@
 class BejakDetailsController < ApplicationController
+  before_action :require_user_logged_in 
 
   before_action  :set_bejak_details, only: [:edit, :update, :destroy]
   def index
     @bejak_details = BejakDetail.all
   end
 
-
   def edit 
+  end
 
-  end 
-
-   def update 
+  def update 
     if @bejak_details.update(bejak_details_params)
-      redirect_to bejak_details_path
-    else
-      render "edit"
-    end
-   end 
+      redirect_to  bejak_details_path
+      else
+        render "edit"
+      end
+  end
 
 
   def new 
@@ -34,10 +33,6 @@ class BejakDetailsController < ApplicationController
       render "new"
     end
   end 
-   
- 
- 
-
   
 def destroy
   @bejak_details.destroy
