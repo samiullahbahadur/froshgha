@@ -7,7 +7,6 @@ class CreateBejakDetails < ActiveRecord::Migration[7.0]
       t.string :unit
       t.integer :quantity
       t.float :unit_price
-      t.bigint :total_price
 
       t.timestamps
     end

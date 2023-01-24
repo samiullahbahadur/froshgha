@@ -1,0 +1,18 @@
+<h1>All Wastes Details</h1>
+
+   <button>  <%= link_to 'New',new_waste_path  %></button>
+<%@waste.each do |bejak|%>
+    
+   
+    <p>  Details:   <%= bejak.details %></p>
+    <p> Unit:   <%= bejak.unit %></p>
+    <p> Quatity:   <%= bejak.quantity %></p>
+    <p> unit Price:   <%= bejak.unit_price %></p>
+    <p> Total Price:   <%= bejak.quantity * bejak.unit_price %></p>
+
+    <%= link_to 'Edit', edit_waste_path(bejak) %>
+    <%= button_to 'Remove', waste_path(bejak), method: :delete %>
+
+<%end%>
+
+

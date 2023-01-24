@@ -1,0 +1,14 @@
+<h1>All Bejak</h1>
+
+
+<%@bejak.each do |bejak|%>
+    
+    <p> Bejak Details:   <%= bejak.details %></p>
+    <p> Bejak date:   <%= bejak.date %></p>
+
+    <%= link_to 'Edit', edit_bejak_path(bejak) %>
+    <%= button_to 'Remove', bejak_path(bejak), method: :delete %>
+
+<%end%>
+
+

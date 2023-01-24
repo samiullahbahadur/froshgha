@@ -1,0 +1,16 @@
+<h1>All Expenditures</h1>
+
+   <button>  <%= link_to 'New',new_expenditure_path  %></button>
+<%@expenditure.each do |exp|%>
+
+ 
+    <p> Description:   <%= exp.description %></p>
+    <p> Amount:   <%= exp.amount %></p>
+    <p> Date:   <%= exp.date %></p>
+   
+    <%= link_to 'Edit', edit_expenditure_path(exp) %>
+    <%= button_to 'Remove', expenditure_path(exp), method: :delete %>
+
+<%end%>
+
+

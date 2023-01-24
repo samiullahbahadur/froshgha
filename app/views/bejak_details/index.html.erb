@@ -1,0 +1,18 @@
+<h1>All Bejak Details</h1>
+
+   <button>  <%= link_to 'New',new_bejak_detail_path  %></button>
+<%@bejak_details.each do |bejak|%>
+    
+    <p>  Bejak Number:   <%= bejak.bejak_id %></p>
+    <p>  Details:   <%= bejak.details %></p>
+    <p> Unit:   <%= bejak.unit %></p>
+    <p> Quatity:   <%= bejak.quantity %></p>
+    <p> unit Price:   <%= bejak.unit_price %></p>
+    <p> Total Price:   <%= bejak.quantity * bejak.unit_price %></p>
+
+    <%= link_to 'Edit', edit_bejak_detail_path(bejak) %>
+    <%= button_to 'Remove', bejak_detail_path(bejak), method: :delete %>
+
+<%end%>
+
+

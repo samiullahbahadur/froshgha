@@ -1,0 +1,25 @@
+
+
+<%= form_with model: @expenditure  do |exp| %>
+   
+    
+    <div class="mb-3">
+        <%= exp.text_area  :description,  autofocus:true,  cols: 30, rows: 2,  placeholder:"Expenditure Details"  %>
+    </div> 
+
+    <div class="mb-3">
+        <%= exp.number_field  :amount,  autofocus:true, step: :any,  placeholder:"Enter amount"  %>
+    </div> 
+
+    <div class="mb-3">
+        <%= exp.date_field  :date,  autofocus:true %>
+    </div> 
+   
+    <div class="mb-3">
+    <%= exp.submit  %>
+    </div>
+
+    <%= link_to "Back" , expenditures_path %>
+   
+
+<% end %>
