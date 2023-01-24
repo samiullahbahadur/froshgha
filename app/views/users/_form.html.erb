@@ -1,5 +1,5 @@
-
-
+<div  class="flex flex-col items-center"> 
+<h1> Signup </h1>
 <%= form_with model:  @user   do |f| %>
     <% if @user.errors.any? %>
 <div class="alert alert-danger">
@@ -8,22 +8,22 @@
  <% end %>
 </div>
 <% end %>
-
-    <div>
+ <div>
     <%= f.text_field :fullname ,  placeholder:"Full Name", autofocus:true %>
     </div>
     <div>
    
-        <div>
+    <div>
         <%= f.email_field :email ,   placeholder:"Enter email" %>
     </div>
     <div>
     <%= f.password_field :password, placeholder:"Password"   %>
     </div>
 
-    <div>
+   <div>
     <%= f.submit%>
     </div>
-    <%= link_to "Back" , root_path %>
+    <%= link_to "Login" , sign_in_path %>
    
     <% end %>
+    </div>

@@ -1,17 +1,17 @@
 <div class="flex flex-col items-center ">
-<h1>Sign in</h1>
-<div>
-<%= form_with session:, url: sign_in_path do |form| %>
-   
-<div class="mb-3">
-<%= form.text_field :email, class:"form-control", placeholder:"Enter email",  autofocus:'true'%>
-</div>
-<div class="mb-3">
-<%= form.password_field :password,class:"form-control",placeholder:"Enter password",  autocomplete:'off'   %>
+        <h1> Login Form</h1>
+            <div>
+              <%= form_with session:, url: sign_in_path do |form| %>
+                </div>
+            <div class="mb-3">
+             <%= form.text_field :email,  placeholder:"Enter email",  autofocus:'true'%>
+            </div>
+            <div class="mb-3">
+             <%= form.password_field :passwor, placeholder:"Enter password",  autocomplete:'off'   %>
 
-</div>
-<div class="mb-3">
-<%= form.submit "Sign in", class:"btn btn-primary"%>
-</div>
-<% end %>
+            </div>
+            <div class="mb-3">
+             <%= form.submit 'Login' %>
+            </div>
+        <% end %>
 </div>
