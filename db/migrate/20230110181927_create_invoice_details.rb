@@ -7,7 +7,6 @@ class CreateInvoiceDetails < ActiveRecord::Migration[7.0]
       t.integer :quantity
       t.float :unit_price
       t.integer :discount
-      t.bigint :total_price
 
       t.timestamps
     end
