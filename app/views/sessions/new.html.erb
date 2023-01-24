@@ -1,17 +1,19 @@
-<div class="flex flex-col items-center ">
-        <h1> Login Form</h1>
-            <div>
-              <%= form_with session:, url: sign_in_path do |form| %>
-                </div>
-            <div class="mb-3">
-             <%= form.text_field :email,  placeholder:"Enter email",  autofocus:'true'%>
-            </div>
-            <div class="mb-3">
-             <%= form.password_field :passwor, placeholder:"Enter password",  autocomplete:'off'   %>
+<div class="flex flex-col items-center w-full gap-6 ">
+<h1 class="text-4xl text-blue-500 font-bold">Sign in</h1>
+<div>
+<%= form_with session:, url: sign_in_path do |form| %>
+<div class="flex flex-col gap-4">
+   
+<div class="mb-3">
+<%= form.text_field :email, class:"form-control", placeholder:"Enter email",  autofocus:'true'%>
+</div>
+<div class="mb-3">
+<%= form.password_field :password,class:"form-control",placeholder:"Enter password",  autocomplete:'off'   %>
 
-            </div>
-            <div class="mb-3">
-             <%= form.submit 'Login' %>
-            </div>
-        <% end %>
+</div>
+<div class="actions self-center justify-self-center bg-blue-500 rounded w-40">
+<%= form.submit "Sign in", class:"text-center w-40 h-8 text-white font-bold cursor-pointer"%>
+</div>
+</div>
+<% end %>
 </div>
