@@ -1,6 +1,6 @@
 
   <button>
-     <%= link_to 'New',new_customer_path  %>
+     <%= link_to 'New',new_customer_path, class: "bg-indigo-50 …" %>
      </button>
 <%@customer.each do |customer|%>
     
@@ -8,8 +8,8 @@
     <p>    <%=  customer.address%></p>
     <p>    <%=  customer.phone%></p>
     <%= link_to 'Edit', edit_customer_path(customer) %>
- 
-    <%= button_to 'Remove', customer_path(customer), method: :delete,  class:"btn btn-primary" %>
 
-<%end%>
+    <%= button_to 'Remove', customer_path(customer), method: :delete,  class: "text-center w-40 h-8 text-white font-bold cursor-pointer bg-blue-500" %>
+    
+    <%end%>
 
