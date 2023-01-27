@@ -1,3 +1,5 @@
+
+
 <div class=" bg-white flex flex-col  w-full ">
 
 <style>
@@ -9,16 +11,16 @@
             transform: translateY(0);
         }
         .child {
-            opacity:0;
+            opacity:1;
             height:0;
             overflow:hidden;
-            transform: translateY(-10%);
+            transform: translateY(-30%);
         }
     }
     
 </style>
 
-    <nav class="flex justify-between px-6 border-b md:shadow-lg items-center h-20  ">
+    <nav class="flex justify-between px-6 border-b md:shadow-lg items-center  h-16 ">
         <div class="text-lg font-bold md:py-0 py-4">
             Logo
         </div>
@@ -27,10 +29,10 @@
         <% if @current_user %>
            
             <li class="relative parent">
-                    <%= link_to "مشتریان", customers_path , class:" flex justify-between md:inline-flex p-4 items-center hover:bg-gray-50 space-x-2" %>   
+                    <%= link_to "مشتریان", customers_path , class:" flex justify-between md:inline-flex p-4 items-center hover:bg-gray-200 space-x-2" %>   
             </li>
 
-            <li class="relative parent flex items-center hover:bg-gray-50 px-1">
+            <li class="relative parent flex items-center hover:bg-gray-200 px-1">
               <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 fill-current pt-1  mt-1 " viewBox="0 0 24 24"><path d="M0 7.33l2.829-2.83 9.175 9.339 9.167-9.339 2.829 2.83-11.996 12.17z"/></svg>
            
                  <%= link_to "کتگوری",categories_path, class:"flex justify-between md:inline-flex px-0.5 items-center "  %>
@@ -41,33 +43,33 @@
                     </li>  
                 </ul>
             </li>
-            <li class="relative parent flex items-center hover:bg-gray-50 px-4">
+            <li class="relative parent flex items-center hover:bg-gray-200 px-4">
               <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 fill-current pt-1  mt-1 " viewBox="0 0 24 24"><path d="M0 7.33l2.829-2.83 9.175 9.339 9.167-9.339 2.829 2.83-11.996 12.17z"/></svg>
            
-                 <%= link_to  "خریداری",bejaks_path, class:"flex justify-between md:inline-flex px-0.5 items-center   "  %>
+                 <%= link_to  "خریداری",bejaks_path, class:"flex justify-between md:inline-flex px-0.5 items-center "  %>
          
              
                 <ul class="child transition duration-300 md:absolute top-full right-0  md:w-40 bg-white md:shadow-lg md:rounded-b ">
                     <li>
                         
-                        <%= link_to "جزئیات خریداری",bejak_details_path , class:"flex flex-col items-center px-1 py-3 hover:bg-gray-50"  %>
+                        <%= link_to "جزئیات خریداری",bejak_details_path , class:"flex flex-col items-center px-1 py-3 hover:bg-gray-100"  %>
                     </li>  
                 </ul>
                 <ul class="child transition duration-300 md:absolute top-full right-0  md:w-40 bg-white md:shadow-lg md:rounded-b ">
                     <li>
                         
-                        <%= link_to "جزئیات خریداری",bejak_details_path , class:"flex flex-col items-center px-1 py-3 hover:bg-gray-50"  %>
+                        <%= link_to "جزئیات خریداری",bejak_details_path , class:"flex flex-col items-center px-1 py-3 hover:bg-gray-100"  %>
                     </li>  
                     <li>
                         
-                        <%= link_to "نرخ اجناس",current_prices_path , class:"flex flex-col items-center px-1 py-3 hover:bg-gray-50"  %>
+                        <%= link_to "نرخ اجناس",current_prices_path , class:"flex flex-col items-center px-1 py-3 hover:bg-gray-100"  %>
                     </li>  
                 </ul>
                 
                 
             </li>
            
-            <li class="relative parent flex items-center hover:bg-gray-50 px-1">
+            <li class="relative parent flex items-center hover:bg-gray-200 px-1">
               <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 fill-current pt-1  mt-1 " viewBox="0 0 24 24"><path d="M0 7.33l2.829-2.83 9.175 9.339 9.167-9.339 2.829 2.83-11.996 12.17z"/></svg>
            
                  <%= link_to  "فروشات",invoices_path, class:"flex justify-between md:inline-flex px-0.5 items-center   "  %>
@@ -76,11 +78,11 @@
                 <ul class="child transition duration-300 md:absolute top-full right-0  md:w-40 bg-white md:shadow-lg md:rounded-b ">
                     <li>
                         
-                        <%= link_to "جزئیات فروشات",invoice_details_path , class:"flex flex-col items-center px-1 py-3 hover:bg-gray-50"  %>
+                        <%= link_to "جزئیات فروشات",invoice_details_path , class:"flex flex-col items-center px-1 py-3 hover:bg-gray-100"  %>
                     </li>  
                 </ul>
             </li>
-            <li class="relative parent flex items-center hover:bg-gray-50 px-1">
+            <li class="relative parent flex items-center hover:bg-gray-200 px-1">
               <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 fill-current pt-1  mt-1 " viewBox="0 0 24 24"><path d="M0 7.33l2.829-2.83 9.175 9.339 9.167-9.339 2.829 2.83-11.996 12.17z"/></svg>
            
                  <%= link_to  "مالی", class:"flex justify-between md:inline-flex px-0.5 items-center  "  %>
@@ -90,7 +92,7 @@
                 <ul class="child transition duration-300 md:absolute top-full right-0  md:w-40 bg-white md:shadow-lg md:rounded-b ">
                     <li>
                         
-                        <%= link_to "مصارفات",expenditures_path, class:"flex flex-col items-center px-1 py-3 hover:bg-gray-50"  %>
+                        <%= link_to "مصارفات",expenditures_path, class:"flex flex-col items-center px-1 py-3 hover:bg-gray-100"  %>
                     </li>  
                 </ul>
             </li>
@@ -108,10 +110,10 @@
       </li>
       <% else %>
       <li> 
-        <%= link_to "Sign in", sign_in_path,class:"w-full px-2 py-1 text-white font-bold cursor-pointer bg-blue-500 rounded-md" %>
+        <%= link_to "Sign in", sign_in_path,class:"w-full p-2 text-white font-bold cursor-pointer bg-blue-500 rounded-md" %>
       </li>
       <li>
-      <%= link_to "Sign up",signup_path , class:"w-full px-2 py-1 text-white font-bold cursor-pointer bg-blue-500 rounded-md"%>
+      <%= link_to "Sign up",signup_path , class:"w-full p-2 text-white font-bold cursor-pointer bg-blue-500 rounded-md"%>
     </li>
     
       <%end%>
@@ -120,3 +122,4 @@
         
     </nav>
 </div>
+
