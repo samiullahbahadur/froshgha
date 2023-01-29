@@ -1,23 +1,36 @@
 
 
+
+
 <%= form_with model: @customer  do |e| %>
-   
+    <div class="flex flex-col  gap-3 w-[50%]  m-auto ">
+     <div class="flex flex-col ">
+        <lable for='name'>Full Name</lable>
+        <%= e.text_field :full_name, placeholder:" Full Name", required: true,
+        class:"peer border border-slate-400  rounded-md bg-white  "   %>   
+   </div>
 
-    <div class="mb-3">
-        <%= e.text_field :full_name, autofocus: true,   placeholder:"Full Name" %>
-    </div> 
-    <div class="mb-3">
-        <%= e.text_field :address, autofocus: true,   placeholder:"Address" %>
-    </div>
-    <div class="mb-3">
-        <%= e.text_field :phone, autofocus: true,  placeholder:"Phone" %>
-    </div>
-   <div>
-    <button>
-    <%= e.submit  %>
-    </button>
-</div>
-   <%= link_to "Back", customers_path %>
-   
+    <div class="flex flex-col ">
+        <lable for='name'>address</lable>
+        <%= e.text_field :address, placeholder:"Address", required: true,
+        class:"peer border border-slate-400  rounded-md bg-white  "   %>       
+   </div>
 
+    <div class="flex flex-col ">
+        <lable for='name'>Phone</lable>
+        <%= e.text_field :phone, placeholder:"+93", required: true,
+        class:"peer border border-slate-400  rounded-md bg-white  "   %>    
+   </div>
+
+   <div class="flex  justify-between ">
+     <div class="flex">
+      <%= e.submit  class:" w-40 p-2  text-white font-bold cursor-pointer bg-blue-500 rounded-md" %>
+     </div>
+
+     <div class='flex  '>
+     <%= link_to "Back", customers_path, class:"   w-40 p-2  text-white text-center font-bold cursor-pointer bg-slate-600 rounded-md" %>
+     </div>
+    </div>
+   </div>
 <% end %>
+
