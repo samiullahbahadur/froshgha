@@ -3,22 +3,29 @@
 
 
 <%= form_with model: @product   do |p| %>
+    <div class="flex flex-col m-auto  gap-3 w-[50%]   ">
+      <div class="flex flex-col ">
+        <lable for='name'>Category Name</lable>
+        <%= p.select  :category_id, Category.pluck( :category_name, :id) ,
+        class:"peer border border-slate-400  rounded-md bg-white " %>      
+   </div>
 
-   
-    <div>
-    <%= p.select  :category_id, Category.pluck( :category_name, :id) %>
+    <div class="flex flex-col ">
+        <lable for='name'>Product Details</lable>
+        <%= p.text_area :product_details, autofocus: true, cols: 50, rows: 3,  placeholder:"Product details",
+        class:"peer border border-slate-400  rounded-md bg-white  "   %>       
+   </div>
+    
+   <div class="flex  justify-between ">
+     <div class="flex">
+      <%= p.submit   class:" w-40 p-2  text-white font-bold cursor-pointer bg-blue-500 rounded-md" %>
+     </div>
+
+     <div class='flex'>
+     <%= link_to "Back",products_path, class:" w-40 p-2  text-white text-center font-bold cursor-pointer bg-slate-600 rounded-md" %>
+     </div>
+
     </div>
-
-    <div class="mb-3">
-        <%= p.text_area :product_details, autofocus: true, cols: 50, rows: 3,  placeholder:"Product details" %>
-    </div> 
-   
-   
-    <div class="mb-3">
-    <%= p.submit  %>
-    </div>
-
-    <%= link_to "Back" , products_path %>
-   
-
+   </div>
 <% end %>
+
