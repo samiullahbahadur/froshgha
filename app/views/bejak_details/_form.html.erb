@@ -1,34 +1,49 @@
 
 
+    <%= form_with model: @bejak_detail, url:  bejak_details_path   do |bjd| %>
 
-<%= form_with model: @bejak_detail, url:  bejak_details_path   do |bjd| %>
+    <div class="flex flex-col m-auto  gap-3 w-[60%] ">
+      <div class="flex flex-col ">
+        <lable for='name'>‌ Product Name </lable>
+        <%=bjd.select :product_id, Product.pluck(:product_details, :id)  ,
+        class:"peer border border-slate-400  rounded-md bg-white " %>      
+     </div>
 
-    <div class="mb-3">
-    <%= bjd.select :product_id, Product.pluck(:product_details, :id) %>
-  </div> 
- 
-   
-    <div class="mb-3">
-        <%= bjd.text_area :details, autofocus: true,  cols: 30, rows: 2, placeholder:"Bejak Details" %>
-    </div> 
-    <div class="mb-3">
-        <%= bjd.text_field :unit, autofocus: true,   placeholder:"Unit" %>
-    </div> 
-    <div class="mb-3">
-        <%= bjd.number_field :quantity, autofocus: true,   placeholder:"Quantity" %>
-    </div> 
-    <div class="mb-3">
-        <%= bjd.number_field :unit_price, autofocus: true, step: :any,  placeholder:"Unit Price" %>
-    </div> 
-    
-  
-   
-   
-    <div class="mb-3">
-    <%= bjd.submit  %>
+    <div class="flex flex-col" >
+        <lable for='name'>Bejak Details</lable>
+        <%=  bjd.text_area :details, autofocus: true,  cols: 30, rows: 2, :required=> true,  placeholder:"Bejak Details",
+        class:"peer border border-slate-400  rounded-md bg-white " %>  
+   </div>
+
+    <div class="flex flex-col ">
+        <lable for='name'>Unit</lable>
+        <%=   bjd.text_field :unit, autofocus: true, :required=> true,   placeholder:"Unit",
+        class:"peer border border-slate-400  rounded-md bg-white " %>             
     </div>
 
-    <%= link_to "Back", bejak_details_path %>
    
 
+    <div class="flex flex-col ">
+        <lable for='name'>Quantity</lable>
+        <%= bjd.number_field :quantity, autofocus: true, :required=> true,   placeholder:"Quantity",
+        class:"peer border border-slate-400  rounded-md bg-white " %>          
+    </div>
+    <div class="flex flex-col ">
+        <lable for='name'>Unit Price</lable>
+        <%=  bjd.number_field :unit_price, autofocus: true, step: :any, :required=> true,  placeholder:"Unit Price",
+        class:"peer border border-slate-400  rounded-md bg-white " %>          
+    </div>
+    
+   <div class="flex  justify-between ">
+     <div class="flex">
+      <%= bjd.submit   class:" w-20 p-2  text-white font-bold cursor-pointer bg-blue-500 rounded-md" %>
+     </div>
+
+     <div class='flex'>
+     <%= link_to "Back",bejak_details_path, class:" w-20 p-2  text-white text-center font-bold cursor-pointer bg-slate-600 rounded-md" %>
+     </div>
+
+    </div>
+   </div>
 <% end %>
+
