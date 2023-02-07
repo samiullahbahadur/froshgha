@@ -5,7 +5,7 @@ class InvoiceDetailsController < ApplicationController
   before_action :set_invoice_details, only: [:edit, :update, :destroy]
 
   def index
-  @invoice_details=InvoiceDetail.all
+  @invoice_details=InvoiceDetail.search(params[:search]).page(params[:page]) 
   end
 
   def edit 

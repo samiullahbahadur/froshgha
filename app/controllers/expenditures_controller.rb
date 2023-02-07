@@ -4,7 +4,7 @@ class ExpendituresController < ApplicationController
   before_action  :set_exp, only:[:edit, :update, :destroy]
 
   def index
-    @expenditure=Expenditure.all 
+    @expenditure=Expenditure.search(params[:search]).page(params[:page]) 
   end
    
   def edit 

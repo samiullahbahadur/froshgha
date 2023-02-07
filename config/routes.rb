@@ -18,5 +18,6 @@ Rails.application.routes.draw do
    get 'sign_in', to: "sessions#new"
  post 'sign_in', to: "sessions#create"
  delete 'logout' => 'sessions#destroy'
+ get 'search_customers', to: 'customers#search'
  
 end

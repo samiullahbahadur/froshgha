@@ -14,9 +14,9 @@ def create
 @user=User.new(user_params)
 if @user.save
 ## when user created and direct to users profile page
-session[:user_id]=@user.id
+#session[:user_id]=@user.id
 
-redirect_to root_path, notice:'You signup successfully!'
+redirect_to sign_in_path, notice:'You signup successfully!'
 else
 render 'new'
 end

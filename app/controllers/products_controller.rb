@@ -4,9 +4,7 @@ class ProductsController < ApplicationController
   before_action :set_product, only: [:edit, :update, :destroy]
 
   def index
-
-    @product=Product.all
-     
+    @product=Product.search(params[:search]).page(params[:page]) 
   end
 
   def edit 
@@ -14,7 +12,6 @@ class ProductsController < ApplicationController
   end 
 
   def update 
-   
    if @product.update(product_params)
     redirect_to products_path
   else

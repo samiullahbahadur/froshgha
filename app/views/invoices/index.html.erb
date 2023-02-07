@@ -1,15 +1,52 @@
 
-<h1>All Invoices</h1>
-
-<button>  <%= link_to 'New',new_invoice_path  %></button>
-<%@invoice.each do |invoice|%>
-    
-    <p> Customer Name:   <%= invoice.customer.full_name %></p>
-    <p>Issue date:   <%= invoice.date %></p>
-
-    <%= link_to 'Edit', edit_invoice_path(invoice) %>
-    <%= button_to 'Remove', invoice_path(invoice), method: :delete %>
-
-<%end%>
 
 
+<div class=" flex flex-col  w-[60%]  gap-4  m-auto rounded-md  pt-6 relative overflow-x-auto bg-zinc-300  ">
+
+<div class="flex justify-between">
+     <div class="flex px-4 ">
+      <h1 class=" flex  text-2xl font-bold" >Invoices List</h1>
+      </div>
+      <div class="flex ml-20 ">
+          <%= form_with( url: invoices_path,  method:  :get , local: true)  do %>
+          <%= text_field_tag (:search), "", class:' w-1/2  ml-20 rounded-md' %>
+          <%= submit_tag("Search", :class=>"cursor-pointer font-bold cursor-pointer p-2 bg-lime-700 rounded-md ")  %>
+          <% end %>
+      </div>
+</div>
+
+<div class="flex flex-col items-end  mr-14">
+<%= link_to 'Add New ',new_invoice_path,class:" w-15 p-2 text-white font-bold cursor-pointer bg-cyan-600 rounded-md" %>
+</div>
+  <table class=" w-[80%]  m-auto text-sm text-gray-500 dark:text-gray-400 text-center ">
+    <thead class="text-lg text-gray-700   dark:bg-gray-700 dark:text-gray-400  border-b" >
+      <tr>
+      <th> Customer Name</th>
+      <th> Issue Date </th>
+      <th> Edit </th>
+      <th> Delete </th> 
+      </tr>
+    </thead >
+    <tbody>
+  
+    <%@invoice.each do |invoice|%>
+ 
+        <tr class="border-b">
+            <td>  <%= invoice.customer.full_name %> </td>
+            <td>  <%= invoice.date %> </td>
+            <td>
+            <%= link_to 'Edit', edit_invoice_path(invoice), class:" p-2 text-white font-bold cursor-pointer bg-lime-600 rounded-md"  %></td>
+            <td>
+         
+           <%= button_to 'Remove', invoice_path(invoice), method: :delete, method: :delete, class:"  p-2 text-white font-bold cursor-pointer bg-red-500 rounded-md" %>
+       
+          </td>
+        </tr>
+       
+      <%end%> 
+      
+    </tbody>                  
+  </table>
+  <%= paginate @invoice %>
+  
+  </div>

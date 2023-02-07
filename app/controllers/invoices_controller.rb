@@ -3,7 +3,7 @@ class InvoicesController < ApplicationController
   
   before_action :set_invoice, only: [:edit, :update, :destroy]
   def index
-    @invoice=Invoice.all
+    @invoice=Invoice.search(params[:search]).page(params[:page]) 
   end
   
   def edit 

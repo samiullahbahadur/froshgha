@@ -1,17 +1,21 @@
 
-
 <%= form_with model: @category   do |c| %>
-   
-    <div class="mb-3">
-        <%= c.text_field :category_name, autofocus: true,   placeholder:"Category name" %>
-    </div> 
-   
-   
-    <div class="mb-3">
-    <%= c.submit  %>
+    <div class="flex flex-col m-auto  gap-3 w-[50%]   ">
+     <div class="flex flex-col ">
+        <lable for='name'>Category Name</lable>
+        <%= c.text_field :category_name,placeholder:" Category Name", required: true,
+        class:"peer border border-slate-400  rounded-md bg-white  "   %>   
+   </div>
+    
+   <div class="flex  justify-between ">
+     <div class="flex">
+      <%= c.submit   class:" w-40 p-2  text-white font-bold cursor-pointer bg-blue-500 rounded-md" %>
+     </div>
+
+     <div class='flex'>
+     <%= link_to "Back",categories_path, class:"   w-40 p-2  text-white text-center font-bold cursor-pointer bg-slate-600 rounded-md" %>
+     </div>
     </div>
-
-    <%= link_to "Back" , categories_path %>
-   
-
+   </div>
 <% end %>
+

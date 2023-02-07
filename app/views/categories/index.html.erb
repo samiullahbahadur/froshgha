@@ -1,10 +1,50 @@
 
 
-<%@category.each do |category|%>
-    
-    <h1> Categories Name:   <%=  category.category_name%></h1>
-    <%= link_to 'Edit', edit_category_path(category) %>
-    <%= button_to 'Remove', category_path(category), method: :delete %>
 
-<%end%>
+<div class=" flex flex-col  w-[60%]  gap-4  m-auto rounded-md  pt-6 relative overflow-x-auto bg-zinc-300  ">
 
+<div class="flex justify-between">
+     <div class="flex px-4 ">
+      <h1 class=" flex  text-2xl font-bold">Categories List</h1>
+      </div>
+      <div class="flex ml-20 ">
+          <%= form_with( url: categories_path,  method:  :get , local: true)  do %>
+          <%= text_field_tag (:search), "", class:' w-1/2  ml-20 rounded-md' %>
+          <%= submit_tag("Search", :class=>"cursor-pointer font-bold cursor-pointer p-2 bg-lime-700 rounded-md ")  %>
+          <% end %>
+      </div>
+</div>
+
+<div class="flex flex-col items-end  mr-14">
+<%= link_to 'Add New ',new_category_path,class:" w-15 p-2 text-white font-bold cursor-pointer bg-cyan-600 rounded-md" %>
+</div>
+  <table class="w-[100%]  m-auto text-sm text-gray-500 dark:text-gray-400 text-center ">
+    <thead class="text-lg text-gray-700   dark:bg-gray-700 dark:text-gray-400  border-b" >
+      <tr>
+      <th> Category Name</th>
+      <th> Edit </th>
+      <th> Delete </th> 
+      </tr>
+    </thead >
+    <tbody>
+  
+    <% @category.each do |category|%>
+ 
+        <tr class="border-b">
+            <td>  <%= category.category_name%> </td>
+            <td>
+            <%= link_to 'Edit', edit_category_path(category), class:" p-2 text-white font-bold cursor-pointer bg-lime-600 rounded-md"  %></td>
+            <td>
+         
+           <%= button_to 'Remove', category_path(category), method: :delete, method: :delete, class:"  p-2 text-white font-bold cursor-pointer bg-red-500 rounded-md" %>
+       
+          </td>
+        </tr>
+       
+      <%end%> 
+      
+    </tbody>                  
+  </table>
+ 
+  <%= paginate @category  %>
+  </div>
