@@ -5,7 +5,8 @@ class CustomersController < ApplicationController
 
   def index
     @customer= Customer.search(params[:search]).page(params[:page])
-    #
+   # @customer= Customer.
+    
   end
 
   def edit 

@@ -8,8 +8,8 @@
       </div>
 
       <div class="flex ml-20 ">
-          <%= form_with( url: customers_path,  method:  :get , local: true)  do %>
-          <%= text_field_tag (:search), "", class:' w-1/2  ml-20 rounded-md' %>
+          <%= form_with( url: customers_path, remote: true,  method:  :get )  do %>
+          <%= text_field_tag :search, params[:search], placeholder:"Search", class:' w-1/2  ml-20 rounded-md' %>
           <%= submit_tag("Search", :class=>"cursor-pointer font-bold cursor-pointer p-2 bg-lime-700 rounded-md ")  %>
           <% end %>
       </div>
@@ -54,5 +54,6 @@
     </tbody>                  
   </table>
  
-  <%= paginate @customer  %>
+
+  <%= paginate  @customer %>
   </div>
