@@ -4,7 +4,9 @@ class CustomersController < ApplicationController
   before_action :set_customer, only: [:edit, :update, :destroy]
 
   def index
-    @customer= Customer.all.limit(2)
+    @customer= Customer.search(params[:search]).page(params[:page])
+   # @customer= Customer.
+    
   end
 
   def edit 
@@ -32,11 +34,11 @@ class CustomersController < ApplicationController
      else
       render 'new'
      end
+
     end
 
 
-    def destroy
-      
+    def destroy   
       @customer.destroy
       redirect_to customers_path
   end

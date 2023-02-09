@@ -1,20 +1,60 @@
 
-<h1>All Invoice Details</h1>
 
-<button>  <%= link_to 'New', new_invoice_detail_path  %></button>
-<%@invoice_details.each do |invoice|%>
-    
-    <p> Product Details:   <%= invoice.product.product_details %></p>
-    <p> Unit:   <%= invoice.unit%></p>
-    <p> Quantity:   <%= invoice.quantity %></p>
-    <p> Unit Price:   <%= invoice.unit_price %></p>
-    <p> Discount:   <%= invoice.discount %></p>
-    <p> Total Price:   <%=  (invoice.unit_price - invoice.discount) * invoice.quantity  %></p>
-    
+<div class=" flex flex-col  w-[100%] m-auto   gap-4  rounded-md  pt-6 relative overflow-x-auto bg-zinc-300  ">
 
-    <%= link_to 'Edit', edit_invoice_detail_path(invoice) %>
-    <%= button_to 'Remove', invoice_detail_path(invoice), method: :delete %>
+<div class="flex justify-between">
+     <div class="flex px-4 ">
+      <h1 class=" flex  text-2xl font-bold"> Invoice Details List</h1>
+      </div>
+      <div class="flex ml-20 ">
+          <%= form_with( url: bejak_details_path,  method:  :get , local: true)  do %>
+          <%= text_field_tag (:search), "", class:' w-1/2  ml-20 rounded-md' %>
+          <%= submit_tag("Search", :class=>"cursor-pointer font-bold cursor-pointer p-2 bg-lime-700 rounded-md ")  %>
+          <% end %>
+      </div>
+</div>
 
-<%end%>
-
+<div class="flex flex-col items-end  mr-14">
+<%= link_to 'Add New ',new_invoice_detail_path, class:" w-15 p-2 text-white font-bold cursor-pointer bg-cyan-600 rounded-md" %>
+</div>
+  <table class=" w-[100%]  m-auto text-sm text-gray-500 dark:text-gray-400 text-center ">
+    <thead class="text-lg text-gray-700   dark:bg-gray-700 dark:text-gray-400  border-b" >
+      <tr>
+      <th> Product Details</th>
+      <th> Unit </th>
+      <th> Quatity </th>
+      <th> Unit Price </th>
+      <th> Discount </th>
+      <th> Total Price </th>
+      <th> Edit </th>
+      <th> Delete </th> 
+      </tr>
+    </thead >
+    <tbody>
+  
+    <%@invoice_details.each do |invoice|%>
+ 
+        <tr class="border-b">
+            <td>  <%= invoice.product.product_details %> </td>
+            <td> <%= invoice.unit%> </td>
+            <td> <%= invoice.quantity %> </td>
+            <td>  <%= invoice.unit_price %> </td>
+            <td>  <%= invoice.discount %></td>
+            <td>  <%=  (invoice.unit_price - invoice.discount) * invoice.quantity  %> </td>
+            <td>
+            <%= link_to 'Edit',edit_invoice_detail_path(invoice), class:" p-2 text-white font-bold cursor-pointer bg-lime-600 rounded-md"  %></td>
+            <td>
+         
+           <%= button_to 'Remove', invoice_detail_path(invoice), method: :delete, method: :delete, class:"  p-2 text-white font-bold cursor-pointer bg-red-500 rounded-md" %>
+       
+          </td>
+        </tr>
+       
+      <%end%> 
+      
+    </tbody>                  
+  </table>
+  <%= paginate @invoice_details %>
+  
+  </div>
 

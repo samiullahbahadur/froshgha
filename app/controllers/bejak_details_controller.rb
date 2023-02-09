@@ -3,7 +3,7 @@ class BejakDetailsController < ApplicationController
 
   before_action  :set_bejak_details, only: [:edit, :update, :destroy]
   def index
-    @bejak_details = BejakDetail.all
+    @bejak_details = BejakDetail.search(params[:search]).page(params[:page]) 
   end
 
   def edit 
