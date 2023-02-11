@@ -6,23 +6,17 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <%= stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload" %>
-
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
   </head>
 
   <body>
-  <%= render 'shared/navbar' %>
-    <div class="container mx-auto mt-20 px-5   ">
-
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
-    
-    <%= yield %>
-   
+    <%= render 'shared/navbar' %>
+    <div class="container mx-auto mt-20 px-5">
+      <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
+      <%= yield %>
+      <%= turbo_frame_tag 'remote_modal'%>
     </div>
-
-    
-
   </body>
 </html>
